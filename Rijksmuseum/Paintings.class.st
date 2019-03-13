@@ -37,7 +37,12 @@ Paintings >> getPaintings [
 	json := NeoJSONReader
 		fromString: (ZnEasy get: collectionUrl) contents.
 	paintings := self class fromJSON: json.
-	paintings paintings do: [ :painting | painting getMoreData ]
+	paintings do: [ :painting | painting getMoreData ]
+]
+
+{ #category : #iteration }
+Paintings >> do: aBlock [
+	paintings do: aBlock.
 ]
 
 { #category : #adding }
